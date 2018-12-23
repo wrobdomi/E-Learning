@@ -6,11 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -50,7 +49,7 @@ public class LoginController {
                 Scene scene = new Scene(platformView, 1500, 800);
 
                 primaryStage.setScene(scene);
-                primaryStage.setTitle("Platform View");
+                primaryStage.setTitle(user.getUsername());
 
             } catch (IOException e) {
                 System.out.println("Unable to load platform.fxml");
@@ -85,6 +84,8 @@ public class LoginController {
 
         dialog.showAndWait();
     }
+
+
 
 
 }
