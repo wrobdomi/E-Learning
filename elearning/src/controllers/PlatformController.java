@@ -2,13 +2,13 @@ package controllers;
 
 import database.DatabaseService;
 import entities.Quizz;
-import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -68,6 +68,24 @@ public class PlatformController {
             tt.setToX( button1.getTranslateX() );
             tt.setToY( button1.getTranslateY() );
             tt.play();
+
+            button1.addEventHandler(MouseEvent.MOUSE_ENTERED,
+                    new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent e) {
+                            button1.setStyle("-fx-background-color: #ffc40d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                                    "-fx-text-fill: white");
+                        }
+                    });
+
+            button1.addEventHandler(MouseEvent.MOUSE_EXITED,
+                    new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent e) {
+                            button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                                    "-fx-text-fill: white");;
+                        }
+                    });
 
             System.out.println(q.getQuizId() + q.getQuizName() + q.getUsername());
         }
