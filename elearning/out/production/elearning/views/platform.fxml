@@ -53,7 +53,7 @@
                   </Lighting>
                </effect>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="496.0" text="Welcome !" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="mainTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="496.0" text="Welcome !" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Kristen ITC" size="46.0" />
                </font>
