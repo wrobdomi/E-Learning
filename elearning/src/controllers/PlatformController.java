@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -365,6 +366,78 @@ public class PlatformController {
             System.out.println("Unable to load platform.fxml");
             e.printStackTrace();
         }
+
+    }
+
+    public void addNewQuiz(){
+
+        mainPane.getChildren().clear();
+
+        int textWidth = 450;
+        int textHeight = 50;
+        int textX = 450;
+        int textY = 250;
+
+        int labelWidth = 450;
+        int labelHeight = 100;
+        int labelX = 450;
+        int labelY = 150;
+
+        int buttonWidth = 100;
+        int buttonHeight = 50;
+        int xPosition = 625;
+        int yPosition = 330;
+
+        TextField textField = new TextField();
+        textField.setMinWidth(textWidth);
+        textField.setMinHeight(textHeight);
+        textField.setMaxWidth(textWidth);
+        textField.setMaxHeight(textHeight);
+        textField.setTranslateX(textX);
+        textField.setTranslateY(textY);
+        mainPane.getChildren().add(textField);
+
+
+        Label label = new Label("Quiz Name:");
+        label.setMinWidth(labelWidth);
+        label.setMinHeight(labelHeight);
+        label.setMaxWidth(labelWidth);
+        label.setMaxHeight(labelHeight);
+        label.setStyle(" -fx-font-family: Arial; -fx-font-size: 30px;" +
+                "-fx-text-fill: white");
+        label.setContentDisplay(ContentDisplay.CENTER);
+        label.setAlignment(Pos.CENTER);
+        label.setTranslateX(labelX);
+        label.setTranslateY(labelY);
+        mainPane.getChildren().add(label);
+
+        Button button1 = new Button("Add");
+        button1.setMinWidth(buttonWidth);
+        button1.setMinHeight(buttonHeight);
+        button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                "-fx-text-fill: white");
+        button1.setOpacity(0.8);
+        button1.setTranslateX(xPosition);
+        button1.setTranslateY(yPosition);
+        mainPane.getChildren().add(button1);
+
+        button1.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        addQuiz(textField.getText());
+                        textField.clear();
+                    }
+        });
+
+    }
+
+    public void addQuiz(String quizName){
+
+        Stage primaryStage = (Stage) mainPlatform.getScene().getWindow();
+
+        DatabaseService databaseService = DatabaseService.getInstance();
+        databaseService.addNewQuiz(quizName, primaryStage.getTitle());
 
     }
 

@@ -254,7 +254,7 @@ public class DatabaseService {
 
     }
 
-    public ArrayList<Answer> getQuestionAnswers(int questionId) {
+    public static ArrayList<Answer> getQuestionAnswers(int questionId) {
 
         connect();
 
@@ -298,7 +298,7 @@ public class DatabaseService {
         return answers;
     }
 
-    public int getUsersQuizId(String un, String quizName){
+    public static int getUsersQuizId(String un, String quizName){
 
         connect();
 
@@ -338,7 +338,7 @@ public class DatabaseService {
         return id;
     }
 
-    public boolean insertQuestion(int quizId, String question){
+    public static boolean insertQuestion(int quizId, String question){
 
         connect();
 
@@ -379,7 +379,7 @@ public class DatabaseService {
 
     }
 
-    public int getQuizQuestionId(String question, int quizId){
+    public static int getQuizQuestionId(String question, int quizId){
 
         connect();
 
@@ -419,7 +419,7 @@ public class DatabaseService {
         return id;
     }
 
-    public boolean addQuestionsAnswer(int questionId, String text, int correct) {
+    public static boolean addQuestionsAnswer(int questionId, String text, int correct) {
 
         connect();
 
@@ -462,4 +462,44 @@ public class DatabaseService {
         return true;
 
     }
+
+    public static boolean addNewQuiz(String quizName, String username) {
+
+        connect();
+
+        StringBuilder sb = new StringBuilder("INSERT INTO ");
+        sb.append(TABLE_NAME_QUIZZES);
+        sb.append("(");
+        sb.append(FOREIGN_COLUMN_USERNAME);
+        sb.append(", ");
+        sb.append(COLUMN_QUIZ_NAME);
+        sb.append(")");
+        sb.append(" VALUES ('");
+        sb.append(username);
+        sb.append("', '");
+        sb.append(quizName);
+        sb.append("');");
+
+        System.out.println(sb.toString());
+
+
+        try{
+            statement = connection.createStatement();
+            // resultSet = statement.executeQuery(sb.toString());
+            statement.execute(sb.toString());
+
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            return false;
+        }
+
+        close();
+
+        return true;
+    }
+
 }

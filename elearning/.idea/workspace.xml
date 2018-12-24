@@ -12,85 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="54" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#showErrorDialog#0;class#LoginController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlatformController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/PlatformController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="361" column="43" lean-forward="true" selection-start-line="361" selection-start-column="43" selection-end-line="361" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddingQuestionController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controllers/AddingQuestionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newquestion.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/newquestion.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="324" selection-start-line="16" selection-start-column="324" selection-end-line="16" selection-end-column="324" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuizMenuPicturesEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enums/QuizMenuPicturesEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuizMenuEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enums/QuizMenuEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuizOptions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enums/QuizOptions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/database/DatabaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+            <state relative-caret-position="235">
+              <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInstance#0;class#DatabaseService#0" />
@@ -117,6 +43,7 @@
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -140,15 +67,16 @@
         <option value="$PROJECT_DIR$/src/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/views/platform.fxml" />
         <option value="$PROJECT_DIR$/src/enums/QuizOptions.java" />
         <option value="$PROJECT_DIR$/src/enums/QuizzMenu.java" />
         <option value="$PROJECT_DIR$/src/enums/QuizzMenuEnum.java" />
         <option value="$PROJECT_DIR$/src/enums/QuizMenuPicturesEnum.java" />
-        <option value="$PROJECT_DIR$/src/controllers/PlatformController.java" />
-        <option value="$PROJECT_DIR$/src/database/DatabaseService.java" />
         <option value="$PROJECT_DIR$/src/views/newquestion.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/AddingQuestionController.java" />
+        <option value="$PROJECT_DIR$/src/views/platform.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/PlatformController.java" />
+        <option value="$PROJECT_DIR$/src/database/iDatabaseService.java" />
+        <option value="$PROJECT_DIR$/src/database/DatabaseService.java" />
       </list>
     </option>
   </component>
@@ -308,11 +236,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3658872" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17331499" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19245774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19245774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -666,14 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/platform.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="40" column="128" selection-start-line="40" selection-start-column="128" selection-end-line="40" selection-end-column="135" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/loginfaildialog.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -686,37 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DatabaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInstance#0;class#DatabaseService#0" />
-            <element signature="method#connect#0;class#DatabaseService#0" />
-            <element signature="method#close#0;class#DatabaseService#0" />
-            <element signature="method#checkUser#0;class#DatabaseService#0" />
-            <element signature="method#getUsersQuizzes#0;class#DatabaseService#0" />
-            <element signature="method#getUsersQuizQuestions#0;class#DatabaseService#0" />
-            <element signature="method#getQuestionAnswers#0;class#DatabaseService#0" />
-            <element signature="method#getUsersQuizId#0;class#DatabaseService#0" />
-            <element signature="method#insertQuestion#0;class#DatabaseService#0" />
-            <element signature="method#getUsersQuizId#1;class#DatabaseService#0" />
-            <element signature="method#addQuestionsAnswer#0;class#DatabaseService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/PlatformController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="361" column="43" lean-forward="true" selection-start-line="361" selection-start-column="43" selection-end-line="361" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,10 +630,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/AddingQuestionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
+        <state relative-caret-position="290">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addQuestion#0;class#AddingQuestionController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/platform.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="41" column="128" selection-start-line="41" selection-start-column="128" selection-end-line="41" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/PlatformController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7497">
+          <caret line="441" column="5" lean-forward="true" selection-start-line="441" selection-start-column="5" selection-end-line="441" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/iDatabaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DatabaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInstance#0;class#DatabaseService#0" />
+            <element signature="method#connect#0;class#DatabaseService#0" />
+            <element signature="method#close#0;class#DatabaseService#0" />
+            <element signature="method#checkUser#0;class#DatabaseService#0" />
+            <element signature="method#getUsersQuizzes#0;class#DatabaseService#0" />
+            <element signature="method#getUsersQuizQuestions#0;class#DatabaseService#0" />
+            <element signature="method#getQuestionAnswers#0;class#DatabaseService#0" />
+            <element signature="method#getUsersQuizId#0;class#DatabaseService#0" />
+            <element signature="method#insertQuestion#0;class#DatabaseService#0" />
+            <element signature="method#getUsersQuizId#1;class#DatabaseService#0" />
+            <element signature="method#addQuestionsAnswer#0;class#DatabaseService#0" />
           </folding>
         </state>
       </provider>

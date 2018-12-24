@@ -133,6 +133,7 @@ public class AddingQuestionController {
             System.out.println("Unable to load platform.fxml");
             e.printStackTrace();
         }
+
     }
 
 
