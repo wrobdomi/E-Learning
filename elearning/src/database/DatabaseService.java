@@ -1,5 +1,7 @@
 package database;
 
+import entities.Answer;
+import entities.Question;
 import entities.Quizz;
 import entities.User;
 
@@ -201,13 +203,100 @@ public class DatabaseService {
 
     }
 
+    public static ArrayList<Question> getUsersQuizQuestions(String un, String quiz){
+
+        connect();
+
+        // create query for the user
+        StringBuilder sb = new StringBuilder("SELECT questionId, quizId, question FROM ");
+        sb.append(TABLE_NAME_QUIZZES);
+        sb.append(" NATURAL JOIN ");
+        sb.append(TABLE_NAME_QUESTIONS);
+        sb.append(" WHERE ");
+        sb.append(FOREIGN_COLUMN_USERNAME);
+        sb.append(" = '");
+        sb.append(un);
+        sb.append("' AND ");
+        sb.append( COLUMN_QUIZ_NAME );
+        sb.append(" = '");
+        sb.append(quiz);
+        sb.append("';");
 
 
+        System.out.println(sb.toString());
 
+        ArrayList<Question>  usersQuizQuestions = new ArrayList<>();
 
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sb.toString());
+            while( resultSet.next() ){
 
+                Question question = new Question();
+                int id = Integer.parseInt(resultSet.getString(COLUMN_QUESTION_ID));
+                question.setQuestionId(id);
+                int id2 = Integer.parseInt(resultSet.getString(FOREIGN_COLUMN_QUIZ_ID));
+                question.setQuizId(id2);
+                question.setQuestion(resultSet.getString(COLUMN_QUESTION));
 
+                usersQuizQuestions.add(question);
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
 
+        close();
+        return  usersQuizQuestions;
+
+    }
+
+    public ArrayList<Answer> getQuestionAnswers(int questionId) {
+
+        connect();
+
+        // create query for the user
+        StringBuilder sb = new StringBuilder("SELECT * FROM ");
+        sb.append(TABLE_NAME_ANSWERS);
+        sb.append(" WHERE ");
+        sb.append(COLUMN_QUESTION_ID);
+        sb.append(" = ");
+        sb.append(questionId);
+        sb.append(";");
+
+        System.out.println(sb.toString());
+
+        ArrayList<Answer> answers = new ArrayList<>();
+
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sb.toString());
+            while( resultSet.next() ){
+
+                Answer answer = new Answer();
+                int id = Integer.parseInt(resultSet.getString(COLUMN_ANSWER_ID));
+                answer.setAnswerId(id);
+                answer.setAnswer(resultSet.getString(COLUMN_ANSWER));
+                int correct = Integer.parseInt(resultSet.getString(COLUMN_CORRECT));
+                answer.setCorrect(correct);
+                answer.setQuestionId(questionId);
+                answers.add(answer);
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        close();
+
+        return answers;
+    }
 
 
 }
