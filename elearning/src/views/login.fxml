@@ -12,21 +12,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../IdeaProjects/E-Learning/elearning/src/views/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
       <HBox alignment="CENTER" layoutX="408.0" layoutY="119.0" prefHeight="40.0" prefWidth="192.0" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="408.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#authenticateUser" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: transparent;" stylesheets="@../IdeaProjects/E-Learning/elearning/src/views/style.css" text="Sign in!" textFill="WHITE" underline="true" />
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#authenticateUser" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: transparent;" stylesheets="@../IdeaProjects/E-Learning/elearning/src/views/style.css" text="Sign up!" textFill="WHITE" underline="true">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#authenticateUser" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Sign in!" textFill="WHITE" underline="true" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#authenticateUser" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Sign up!" textFill="WHITE" underline="true">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
          </children>
       </HBox>
-      <VBox layoutX="209.0" layoutY="151.0" prefHeight="58.0" prefWidth="182.0" style="-fx-border-color: white;" stylesheets="@../IdeaProjects/E-Learning/elearning/src/views/style.css">
+      <VBox layoutX="209.0" layoutY="151.0" prefHeight="58.0" prefWidth="182.0" style="-fx-border-color: white;" stylesheets="@style.css">
          <children>
-            <TextField fx:id="username" alignment="CENTER" prefHeight="20.0" promptText="Username..." style="-fx-background-color: transparent; -fx-prompt-text-fill: white;" stylesheets="@../IdeaProjects/E-Learning/elearning/src/views/style.css">
+            <TextField fx:id="username" alignment="CENTER" prefHeight="20.0" promptText="Username..." style="-fx-background-color: transparent; -fx-prompt-text-fill: white;" stylesheets="@style.css">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <PasswordField fx:id="password" alignment="CENTER" prefHeight="20.0" promptText="Password..." style="-fx-background-color: transparent; -fx-prompt-text-fill: white;" stylesheets="@../IdeaProjects/E-Learning/elearning/src/views/style.css">
+            <PasswordField fx:id="password" alignment="CENTER" prefHeight="20.0" promptText="Password..." style="-fx-background-color: transparent; -fx-prompt-text-fill: white;" stylesheets="@style.css">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
