@@ -298,5 +298,168 @@ public class DatabaseService {
         return answers;
     }
 
+    public int getUsersQuizId(String un, String quizName){
 
+        connect();
+
+        // create query for the user
+        StringBuilder sb = new StringBuilder("SELECT quizId FROM ");
+        sb.append(TABLE_NAME_QUIZZES);
+        sb.append(" WHERE ");
+        sb.append(FOREIGN_COLUMN_USERNAME);
+        sb.append(" = '");
+        sb.append(un);
+        sb.append("' AND ");
+        sb.append(COLUMN_QUIZ_NAME);
+        sb.append(" = '");
+        sb.append(quizName);
+        sb.append("';");
+
+        System.out.println(sb.toString());
+
+        int id = -1;
+
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sb.toString());
+            while( resultSet.next() ){
+                id = Integer.parseInt(resultSet.getString(COLUMN_QUIZ_ID));
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        close();
+
+        return id;
+    }
+
+    public boolean insertQuestion(int quizId, String question){
+
+        connect();
+
+        // create query for the user
+        StringBuilder sb = new StringBuilder("INSERT INTO ");
+        sb.append(TABLE_NAME_QUESTIONS);
+        sb.append("(");
+        sb.append(FOREIGN_COLUMN_QUIZ_ID);
+        sb.append(", ");
+        sb.append(COLUMN_QUESTION);
+        sb.append(")");
+        sb.append(" VALUES (");
+        sb.append(quizId);
+        sb.append(", '");
+        sb.append(question);
+        sb.append("');");
+
+        System.out.println(sb.toString());
+
+
+        try{
+            statement = connection.createStatement();
+            // resultSet = statement.executeQuery(sb.toString());
+            statement.execute(sb.toString());
+
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            return false;
+        }
+
+        close();
+
+        return true;
+
+    }
+
+    public int getQuizQuestionId(String question, int quizId){
+
+        connect();
+
+        // create query for the user
+        StringBuilder sb = new StringBuilder("SELECT questionId FROM ");
+        sb.append(TABLE_NAME_QUESTIONS);
+        sb.append(" WHERE ");
+        sb.append(FOREIGN_COLUMN_QUIZ_ID);
+        sb.append(" = ");
+        sb.append(quizId);
+        sb.append(" AND ");
+        sb.append(COLUMN_QUESTION);
+        sb.append(" = '");
+        sb.append(question);
+        sb.append("';");
+
+        System.out.println(sb.toString());
+
+        int id = -1;
+
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sb.toString());
+            while( resultSet.next() ){
+                id = Integer.parseInt(resultSet.getString(COLUMN_QUESTION_ID));
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        close();
+
+        return id;
+    }
+
+    public boolean addQuestionsAnswer(int questionId, String text, int correct) {
+
+        connect();
+
+        StringBuilder sb = new StringBuilder("INSERT INTO ");
+        sb.append(TABLE_NAME_ANSWERS);
+        sb.append("(");
+        sb.append(FOREIGN_COLUMN_QUESTION_ID);
+        sb.append(", ");
+        sb.append(COLUMN_ANSWER);
+        sb.append(", ");
+        sb.append(COLUMN_CORRECT);
+        sb.append(")");
+        sb.append(" VALUES (");
+        sb.append(questionId);
+        sb.append(", '");
+        sb.append(text);
+        sb.append("',");
+        sb.append(correct);
+        sb.append(");");
+
+        System.out.println(sb.toString());
+
+
+        try{
+            statement = connection.createStatement();
+            // resultSet = statement.executeQuery(sb.toString());
+            statement.execute(sb.toString());
+
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            return false;
+        }
+
+        close();
+
+        return true;
+
+    }
 }

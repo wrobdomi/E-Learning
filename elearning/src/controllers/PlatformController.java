@@ -10,7 +10,10 @@ import enums.QuizOptions;
 import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
@@ -18,9 +21,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PlatformController {
@@ -120,16 +124,6 @@ public class PlatformController {
                     new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent event) {
-
-//                            final Rotate rotationTransform = new Rotate(0, 75, 75);
-//                            b.getTransforms().add(rotationTransform);
-//
-//                            final Timeline rotationAnimation = new Timeline();
-//                            rotationAnimation.getKeyFrames().add( new KeyFrame(
-//                                                    Duration.seconds(1),
-//                                                    new KeyValue( rotationTransform.angleProperty(),360 )));
-//                            rotationAnimation.play();
-
                             mainPane.getChildren().clear();
                             showQuizMenu(b.getText());
                         }
@@ -251,11 +245,6 @@ public class PlatformController {
         ArrayList<Label> questionsLabels = new ArrayList<>();
         ArrayList<ArrayList<Label>> answersLabels = new ArrayList<ArrayList<Label>>();
 
-
-
-//        for(Question q : usersQuizQuestion){
-//            System.out.println(q.getQuestion() + q.getQuestionId() + q.getQuizId());
-//        }
         for(int i = 0 ; i < usersQuizQuestion.size() ; i++ ){
             questionAnswers.add(databaseService.getQuestionAnswers(usersQuizQuestion.get(i).getQuestionId()));
             answerY = initialY;
@@ -359,7 +348,24 @@ public class PlatformController {
 
 
     public void addQuestion(String text) {
-        System.out.println("Inside startLearning method");
+
+        Stage primaryStage = (Stage) mainPlatform.getScene().getWindow();
+
+        String user = primaryStage.getTitle();
+
+        try {
+            Parent platformView = FXMLLoader.load(getClass().getResource("../views/newquestion.fxml"));
+
+            Scene scene = new Scene(platformView, 1580, 800);
+
+            primaryStage.setScene(scene);
+            primaryStage.setTitle(user + ":" + text);
+
+        } catch (IOException e) {
+            System.out.println("Unable to load platform.fxml");
+            e.printStackTrace();
+        }
+
     }
 
 
