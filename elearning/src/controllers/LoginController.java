@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class LoginController {
             try {
                 Parent platformView = FXMLLoader.load(getClass().getResource("../views/platform.fxml"));
 
-                Scene scene = new Scene(platformView, 1580, 800);
+                Scene scene = new Scene(platformView);
 
                 primaryStage.setScene(scene);
                 primaryStage.setTitle(user.getUsername());
@@ -81,7 +82,17 @@ public class LoginController {
         }
         else{
             System.out.println("FailDialogController: user exists!");
-        }
+            this.fail2();
+            }
+    }
+    public void fail2(){
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        a.setTitle("Warning!");
+        a.setHeaderText("Problem z logowaniem");
+        a.setContentText("user takowy juz ma swoje miejsce w tej bazie");
+        a.show();
+
+
     }
 
     /**

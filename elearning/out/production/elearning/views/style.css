@@ -3,7 +3,7 @@
     -fx-background-size: cover;
 }
 
-.platformBackground{
+.platformBackground {
 	-fx-background-image: url('back.jpg');
 	-fx-background-size: cover;
 }
@@ -19,6 +19,7 @@
 	-fx-text-fill: white;
 	-fx-font-family: arial;
 	-fx-font-size: 12px;
+	-fx-background-radius: 100;
 
 }
 

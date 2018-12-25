@@ -165,8 +165,10 @@ public class DatabaseService {
     }
 
     /**
+     *
      * checks if username is not already used in the DB
      * @return boolean
+     *
      */
     public static boolean checkUser(String username){
         connect();
@@ -207,10 +209,27 @@ public class DatabaseService {
     }
 
     /**
+     *
      * adds user to database
      * @return string
+     *
      */
     public static void addUser(String user, String pass){
+        connect();
+
+        StringBuilder sb = new StringBuilder("INSERT INTO ");
+        sb.append(TABLE_NAME_USERS);
+        sb.append('(');
+        sb.append(COLUMN_USER);
+        sb.append(',');
+        sb.append(COLUMN_PASSWORD);
+        sb.append(") VALUES ('");
+        sb.append(user);
+        sb.append(',');
+        sb.append(pass);
+        sb.append(");");
+
+
         System.out.println("User added!");
     }
 
