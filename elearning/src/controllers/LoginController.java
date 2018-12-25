@@ -62,6 +62,27 @@ public class LoginController {
 
     }
 
+    /**
+     * checks if already exists then creates new user
+     * not functioning properly yet
+     */
+    @FXML
+    public void createUser(){
+        System.out.println("Creating new user...");
+        DatabaseService databaseService = DatabaseService.getInstance();
+
+        // check if user is registered
+        boolean exists = databaseService.checkUser(username.getText());
+
+        System.out.println("checking if already exists...");
+        if (exists == false){
+            System.out.println("adding user to database");
+            databaseService.addUser(username.getText(), password.getText());
+        }
+        else{
+            System.out.println("FailDialogController: user exists!");
+        }
+    }
 
     /**
      * shows dialog pane when connection to db failed

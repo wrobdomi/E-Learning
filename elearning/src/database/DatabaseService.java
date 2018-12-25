@@ -120,7 +120,7 @@ public class DatabaseService {
 
     /**
      * authenticates username and password
-     * @return User objet containing pass and un or null if not authenticated
+     * @return User object containing pass and un or null if not authenticated
      */
     public static User checkUser(String user, String pass){
 
@@ -162,6 +162,56 @@ public class DatabaseService {
 
         close();
         return userDB;
+    }
+
+    /**
+     * checks if username is not already used in the DB
+     * @return boolean
+     */
+    public static boolean checkUser(String username){
+        connect();
+
+        // create query for the user
+        StringBuilder sb = new StringBuilder("SELECT * FROM ");
+        sb.append(TABLE_NAME_USERS);
+        sb.append(" WHERE username = '");
+        sb.append(username);
+        sb.append("';");
+
+        System.out.println(sb.toString());
+        boolean check = false;
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sb.toString());
+
+            if(!resultSet.next()){
+                System.out.println("Nie ma takiego usera");
+                check = false;
+            }
+            else {
+                System.out.println("Istnieje taki user");
+                check = true;
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally{
+            close();
+        }
+
+        return check;
+    }
+
+    /**
+     * adds user to database
+     * @return string
+     */
+    public static void addUser(String user, String pass){
+        System.out.println("User added!");
     }
 
     public static ArrayList<Quizz> getUsersQuizzes( String un ){

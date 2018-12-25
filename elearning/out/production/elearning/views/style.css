@@ -1,4 +1,35 @@
-.root {
-    -fx-background-image:url('back.jpg');
-    -fx-background-size:cover;
+.loginBackground {
+    -fx-background-image: url('back.jpg');
+    -fx-background-size: cover;
+}
+
+.platformBackground{
+	-fx-background-image: url('back.jpg');
+	-fx-background-size: cover;
+}
+
+.labels {
+	-fx-text-fill: white;
+	-fx-font-family: arial;
+	-fx-font-size: 24px;
+}
+
+.buttons {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-font-family: arial;
+	-fx-font-size: 12px;
+
+}
+
+.fields {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+	-fx-font-family: arial;
+	-fx-font-size: 12px;
+}
+
+.menu {
+	
 }
