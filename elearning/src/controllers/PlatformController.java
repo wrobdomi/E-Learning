@@ -441,7 +441,10 @@ public class PlatformController {
 
     }
 
+    //usuwanie quizu
+    public void removeQuiz() {
 
+    }
 }
 
 

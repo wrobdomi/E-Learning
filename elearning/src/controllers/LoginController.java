@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class LoginController {
             try {
                 Parent platformView = FXMLLoader.load(getClass().getResource("../views/platform.fxml"));
 
-                Scene scene = new Scene(platformView, 1580, 800);
+                Scene scene = new Scene(platformView);
 
                 primaryStage.setScene(scene);
                 primaryStage.setTitle(user.getUsername());
@@ -62,6 +63,37 @@ public class LoginController {
 
     }
 
+    /**
+     * checks if already exists then creates new user
+     * not functioning properly yet
+     */
+    @FXML
+    public void createUser(){
+        System.out.println("Creating new user...");
+        DatabaseService databaseService = DatabaseService.getInstance();
+
+        // check if user is registered
+        boolean exists = databaseService.checkUser(username.getText());
+
+        System.out.println("checking if already exists...");
+        if (exists == false){
+            System.out.println("adding user to database");
+            databaseService.addUser(username.getText(), password.getText());
+        }
+        else{
+            System.out.println("FailDialogController: user exists!");
+            this.fail2();
+            }
+    }
+    public void fail2(){
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        a.setTitle("Warning!");
+        a.setHeaderText("Problem z logowaniem");
+        a.setContentText("user takowy juz ma swoje miejsce w tej bazie");
+        a.show();
+
+
+    }
 
     /**
      * shows dialog pane when connection to db failed
