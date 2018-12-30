@@ -122,9 +122,9 @@ public class AddingQuestionController {
         String[] arr = title.split(":", -1);
 
         try {
-            Parent platformView = FXMLLoader.load(getClass().getResource("../views/platform.fxml"));
+            Parent platform = FXMLLoader.load(getClass().getResource("../views/platform.fxml"));
 
-            Scene scene = new Scene(platformView, 1580, 800);
+            Scene scene = new Scene(platform);
 
             primaryStage.setScene(scene);
             primaryStage.setTitle(arr[0]);

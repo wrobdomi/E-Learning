@@ -1,0 +1,37 @@
+.loginBackground {
+    -fx-background-image: url('back.jpg');
+    -fx-background-size: cover;
+}
+
+.labels {
+	-fx-text-fill: white;
+	-fx-font-family: arial;
+	-fx-font-size: 24px;
+}
+
+.buttons {
+	-fx-background-color: #1d1d1d;
+	-fx-text-fill: #0099CC;
+	-fx-font-family: arial;
+	-fx-font-size: 12px;
+	-fx-background-radius: 30px;
+	-fx-border-radius: 30px;
+	-fx-border-color: #0099CC;
+	-fx-border: solid;
+	-fx-text-transform: uppercase;
+
+}
+
+.fields {
+	-fx-background-color: #1d1d1d;
+	-fx-text-fill: #0099CC;
+	-fx-prompt-text-fill: #0099CC;
+	-fx-font-family: arial;
+	-fx-font-size: 12px;
+	-fx-background-radius: 30px;
+	-fx-border-radius: 30px;
+	-fx-border-color: #0099CC;
+}
+
+.box {
+}

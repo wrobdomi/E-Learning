@@ -2,6 +2,7 @@ package controllers;
 
 import database.DatabaseService;
 import entities.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +22,26 @@ public class LoginController {
     @FXML
     private AnchorPane mainAnchor;
 
+    /**
+     * loads scene
+     */
 
+    private void loadStage(String title){
+        Stage primaryStage = (Stage) mainAnchor.getScene().getWindow();
+
+        try {
+            Parent platform = FXMLLoader.load(getClass().getResource("../views/platform.fxml"));
+
+            Scene scene = new Scene(platform);
+
+            primaryStage.setScene(scene);
+            primaryStage.setTitle(title);
+
+        } catch (IOException e) {
+            System.out.println("Unable to load platform.fxml");
+            e.printStackTrace();
+        }
+    }
     /**
      * tries to connect to db using credentials provided by user
      * invoked after 'submit' was clicked
@@ -41,31 +61,19 @@ public class LoginController {
         User user = databaseService.checkUser(username.getText(), password.getText());
 
         if(user != null){ // if user registered
-
-            Stage primaryStage = (Stage) mainAnchor.getScene().getWindow();
-
-            try {
-                Parent platformView = FXMLLoader.load(getClass().getResource("../views/platform.fxml"));
-
-                Scene scene = new Scene(platformView, 1580, 800);
-
-                primaryStage.setScene(scene);
-                primaryStage.setTitle(user.getUsername());
-
-            } catch (IOException e) {
-                System.out.println("Unable to load platform.fxml");
-                e.printStackTrace();
-            }
-
-
+            this.loadStage(user.getUsername());
         }
         else{ // if user not registered show error dialog
-            this.showErrorDialog();
+            this.signinAlert();
+            //this.showErrorDialog();
         }
 
     }
 
-
+    public void createUser(ActionEvent event) {
+        //adding user to database, else:
+        this.signupAlert();
+    }
     /**
      * shows dialog pane when connection to db failed
      * after 4 attempts
@@ -86,7 +94,24 @@ public class LoginController {
         dialog.showAndWait();
     }
 
+    /**
+     *  same as method up ^
+     */
+    public void signinAlert() {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setTitle("Error!");
+        a.setHeaderText("Wprowadzone dane są nieprawidłowe...");
+        a.setContentText("Nazwa użytkownika lub hasło są niepoprawne!");
+        a.show();
+    }
 
+    public void signupAlert() {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setTitle("Error!");
+        a.setHeaderText("Wprowadzone dane są nieprawidłowe...");
+        a.setContentText("Taki użytkownik już istnieje!");
+        a.show();
+    }
 
 
 }

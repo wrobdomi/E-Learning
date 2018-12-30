@@ -1,0 +1,22 @@
+.buttons {
+    -fx-background-color: black;
+    -fx-border-radius: 30px;
+    -fx-border-color: #0099CC;
+
+    -fx-text-fill: #0099CC;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-weight: italic;
+    -fx-font-size: 15px;
+}
+
+.labels {
+    -fx-text-fill: white;
+    -fx-font-family: "Kristen ITC";
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-border-width: 2px;
+}
+
+.boxes {
+    -fx-background-color: #1d1d1d;
+}

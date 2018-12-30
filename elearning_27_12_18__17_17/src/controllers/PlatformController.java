@@ -22,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javax.xml.crypto.Data;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -48,13 +48,13 @@ public class PlatformController {
 
         mainTitle.setText("List off your quizzes");
 
-        int initialX = 100;
-        int xPosition = 100;
-        int xPositionChange = 250;
+        int initialX = 20;
+        int xPosition = 20;
+        int xPositionChange = 120;
         int yPosition = 20;
-        int yPositionChange = 200;
-        int buttonWidth = 150;
-        int buttonHeight = 150;
+        int yPositionChange = 120;
+        int buttonWidth = 100;
+        int buttonHeight = 100;
 
         Stage primaryStage = (Stage) mainPlatform.getScene().getWindow();
         System.out.println("Title is " + primaryStage.getTitle());
@@ -76,7 +76,7 @@ public class PlatformController {
             Button button1 = new Button(q.getQuizName());
             button1.setMinWidth(buttonWidth);
             button1.setMinHeight(buttonHeight);
-            button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+            button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 16px;" +
                     "-fx-text-fill: white");
             button1.setOpacity(0.8);
             button1.setTranslateX(xPosition);
@@ -98,7 +98,7 @@ public class PlatformController {
                     new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent e) {
-                            button1.setStyle("-fx-background-color: #ffc40d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                            button1.setStyle("-fx-background-color: #ffc40d; -fx-font-family: Arial; -fx-font-size: 16px;" +
                                     "-fx-text-fill: white");
                         }
                     });
@@ -107,7 +107,7 @@ public class PlatformController {
                     new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent e) {
-                            button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                            button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 16px;" +
                                     "-fx-text-fill: white");
                         }
                     });
@@ -355,7 +355,7 @@ public class PlatformController {
         try {
             Parent platformView = FXMLLoader.load(getClass().getResource("../views/newquestion.fxml"));
 
-            Scene scene = new Scene(platformView, 1580, 800);
+            Scene scene = new Scene(platformView);
 
             primaryStage.setScene(scene);
             primaryStage.setTitle(user + ":" + text);
