@@ -8,6 +8,7 @@ import enums.QuizMenuEnum;
 import enums.QuizMenuPicturesEnum;
 import enums.QuizOptions;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -212,6 +213,8 @@ public class PlatformController {
                     });
         }
     }
+
+
 
     private void startQuiz(String text) {
 
@@ -549,6 +552,15 @@ public class PlatformController {
     }
 
 
+    /**
+     * button to clean up the scene
+     * @param event
+     */
+
+    public void mainMenu(ActionEvent event) {
+        mainPane.getChildren().clear();
+        mainTitle.setText("Gotta solve 'em all!");
+    }
 }
 
 

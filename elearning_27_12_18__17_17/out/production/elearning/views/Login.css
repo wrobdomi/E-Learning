@@ -10,7 +10,7 @@
 }
 
 .buttons {
-	-fx-background-color: gray;
+	-fx-background-color: #1d1d1d;
 	-fx-text-fill: #0099CC;
 	-fx-font-family: arial;
 	-fx-font-size: 12px;
@@ -23,7 +23,7 @@
 }
 
 .fields {
-	-fx-background-color: gray;
+	-fx-background-color: #1d1d1d;
 	-fx-text-fill: #0099CC;
 	-fx-prompt-text-fill: #0099CC;
 	-fx-font-family: arial;

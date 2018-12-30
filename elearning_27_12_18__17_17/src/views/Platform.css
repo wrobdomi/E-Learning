@@ -11,6 +11,8 @@
     -fx-font-family: "Book Antiqua";
     -fx-font-weight: italic;
     -fx-font-size: 15px;
+
+    -fx-prefHeight: 40;
 }
 
 .labels {
