@@ -11,4 +11,7 @@
    <left>
       <Button mnemonicParsing="false" onMouseClicked="#showFxml" text="Button" BorderPane.alignment="CENTER" />
    </left>
+   <top>
+      <Button mnemonicParsing="false" onMouseClicked="#showFxml2" text="Button" BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>

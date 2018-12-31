@@ -4,12 +4,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" >
+<VBox fx:controller="test.testController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+      minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="a">
    <children>
       <Label text="test">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <Button onMouseClicked="#testMethod" text="test">
+      </Button>
    </children>
 </VBox>

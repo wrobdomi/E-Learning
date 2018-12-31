@@ -15,9 +15,19 @@ public class myController implements Initializable {
     @FXML
     BorderPane borderPane;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
     @FXML
     private void showFxml(MouseEvent event) {
         load("test");
+    }
+
+    @FXML
+    public void showFxml2(MouseEvent event) {
+        load("test2");
     }
 
     private void load(String name) {
@@ -29,8 +39,7 @@ public class myController implements Initializable {
         }
         borderPane.setCenter(root);
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
-    }
+
+
 }
