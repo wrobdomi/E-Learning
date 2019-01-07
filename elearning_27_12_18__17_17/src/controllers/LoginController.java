@@ -63,49 +63,28 @@ public class LoginController {
         if(user != null){ // if user registered
             this.loadStage(user.getUsername());
         }
-        else{ // if user not registered show error dialog
-            this.signinAlert();
-            //this.showErrorDialog();
+        else{ // if user not registered show error
+            this.alertSignIn();
         }
 
     }
-
+    @FXML
     public void createUser(ActionEvent event) {
         //adding user to database, else:
-        this.signupAlert();
-    }
-    /**
-     * shows dialog pane when connection to db failed
-     * after 4 attempts
-     */
-    public void showErrorDialog(){
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.initOwner(mainAnchor.getScene().getWindow());
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("../views/loginfaildialog.fxml"));
-            dialog.getDialogPane().setContent(root);
-        }catch(IOException e){
-            System.out.println("Cant load the dialog.");
-            e.printStackTrace();
-        }
-
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
-
-        dialog.showAndWait();
+        this.alertSignUp();
     }
 
     /**
-     *  same as method up ^
+     *  alerts on log
      */
-    public void signinAlert() {
+    private void alertSignIn() {
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setTitle("Error!");
         a.setHeaderText("Wprowadzone dane są nieprawidłowe...");
         a.setContentText("Nazwa użytkownika lub hasło są niepoprawne!");
         a.show();
     }
-
-    public void signupAlert() {
+    private void alertSignUp() {
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setTitle("Error!");
         a.setHeaderText("Wprowadzone dane są nieprawidłowe...");

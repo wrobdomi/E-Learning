@@ -43,6 +43,7 @@ public class PlatformController {
     private ArrayList<ArrayList<Answer>> questionAnswers = null;
     private int actualQuestion = 0;
 
+    // changed
     public void showUsersQuizzes(){
 
         mainPane.getChildren().clear();
@@ -51,11 +52,11 @@ public class PlatformController {
 
         int initialX = 20;
         int xPosition = 20;
-        int xPositionChange = 120;
+        int xPositionChange = 130;
         int yPosition = 20;
-        int yPositionChange = 120;
-        int buttonWidth = 100;
-        int buttonHeight = 100;
+        int yPositionChange = 130;
+        int buttonWidth = 110;
+        int buttonHeight = 110;
 
         Stage primaryStage = (Stage) mainPlatform.getScene().getWindow();
         System.out.println("Title is " + primaryStage.getTitle());
@@ -69,7 +70,7 @@ public class PlatformController {
 
             Quizz q = usersQuizzes.get(i);
 
-            if(i % 5 == 0 && i != 0){
+            if(i % 6 == 0 && i != 0){
                 yPosition = yPosition + yPositionChange;
                 xPosition = initialX;
             }
@@ -131,17 +132,18 @@ public class PlatformController {
         }
 
     }
+    // to showquizmenu
 
-
+    // not done yet
     public void showQuizMenu(String text) {
 
         mainTitle.setText("QUIZ: " + text);
 
-        int xPosition = 300;
-        int xPositionChange = 400;
-        int yPosition = 100;
-        int buttonWidth = 300;
-        int buttonHeight = 300;
+        int xPosition = 20;
+        int xPositionChange = 200;
+        int yPosition = 150;
+        int buttonWidth = 110;
+        int buttonHeight = 110;
 
         ArrayList<Button> buttons = new ArrayList<>();
 
@@ -356,7 +358,7 @@ public class PlatformController {
         String user = primaryStage.getTitle();
 
         try {
-            Parent platformView = FXMLLoader.load(getClass().getResource("../views/newquestion.fxml"));
+            Parent platformView = FXMLLoader.load(getClass().getResource("../views/addquestion.fxml"));
 
             Scene scene = new Scene(platformView);
 
