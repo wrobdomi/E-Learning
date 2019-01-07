@@ -134,13 +134,13 @@ public class PlatformController {
     }
     // to showquizmenu
 
-    // not done yet
+    // changed
     public void showQuizMenu(String text) {
 
         mainTitle.setText("QUIZ: " + text);
 
         int xPosition = 20;
-        int xPositionChange = 200;
+        int xPositionChange = 300;
         int yPosition = 150;
         int buttonWidth = 110;
         int buttonHeight = 110;
@@ -215,29 +215,29 @@ public class PlatformController {
                     });
         }
     }
+    // to startquiz
 
-
-
+    // changed
     private void startQuiz(String text) {
 
         actualQuestion = 0;
 
-        int questionWidth = 1200;
-        int questionHeight = 200;
-        int questionX = 50;
-        int questionY = 80;
+        int questionWidth = 760;
+        int questionHeight = 100;
+        int questionX = 20;
+        int questionY = 20;
 
-        int answerWidth = 1200;
+        int answerWidth = 760;
         int answerHeight = 50;
-        int answerX = 50;
-        int answerY = 300;
+        int answerX = 20;
+        int answerY = 140;
         int initialY = answerY;
         int answerChange = 70;
 
         int buttonWidth = 100;
-        int buttonHeight = 50;
-        int xPosition = 600;
-        int yPosition = 600;
+        int buttonHeight = 60;
+        int xPosition = 350;
+        int yPosition = 420;
 
         mainTitle.setText("Now learning " + text);
 
@@ -263,7 +263,7 @@ public class PlatformController {
                 label1.setMinHeight(answerHeight);
                 label1.setMaxWidth(answerWidth);
                 label1.setMaxHeight(answerHeight);
-                label1.setStyle("-fx-background-color: #3e4444; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                label1.setStyle("-fx-background-color: #3e4444; -fx-font-family: Arial; -fx-font-size: 16px;" +
                         "-fx-text-fill: white");
                 label1.setContentDisplay(ContentDisplay.LEFT);
                 label1.setAlignment(Pos.CENTER_LEFT);
@@ -277,11 +277,11 @@ public class PlatformController {
                             @Override
                             public void handle(MouseEvent event) {
                                 if(correct == 1){
-                                    label1.setStyle("-fx-background-color: #82b74b; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                                    label1.setStyle("-fx-background-color: #82b74b; -fx-font-family: Arial; -fx-font-size: 16px;" +
                                             "-fx-text-fill: white");
                                 }
                                 else{
-                                    label1.setStyle("-fx-background-color: #c94c4c; -fx-font-family: Arial; -fx-font-size: 25px;" +
+                                    label1.setStyle("-fx-background-color: #c94c4c; -fx-font-family: Arial; -fx-font-size: 16px;" +
                                             "-fx-text-fill: white");;
                                 }
                             }
@@ -299,7 +299,7 @@ public class PlatformController {
             label.setMinHeight(questionHeight);
             label.setMaxWidth(questionWidth);
             label.setMaxHeight(questionHeight);
-            label.setStyle("-fx-background-color: #3e4444; -fx-font-family: Arial; -fx-font-size: 25px;" +
+            label.setStyle("-fx-background-color: #3e4444; -fx-font-family: Arial; -fx-font-size: 16px;" +
                     "-fx-text-fill: white");
             // label.setOpacity(0.8);
             label.setContentDisplay(ContentDisplay.CENTER);
@@ -316,7 +316,7 @@ public class PlatformController {
         Button button1 = new Button("Next");
         button1.setMinWidth(buttonWidth);
         button1.setMinHeight(buttonHeight);
-        button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 25px;" +
+        button1.setStyle("-fx-background-color: #1d1d1d; -fx-font-family: Arial; -fx-font-size: 16px;" +
                 "-fx-text-fill: white");
         button1.setOpacity(0.8);
         button1.setTranslateX(xPosition);
@@ -350,7 +350,6 @@ public class PlatformController {
     }
 
 
-
     public void addQuestion(String text) {
 
         Stage primaryStage = (Stage) mainPlatform.getScene().getWindow();
@@ -372,25 +371,26 @@ public class PlatformController {
 
     }
 
+    // changed
     public void addNewQuiz(){
 
         mainPane.getChildren().clear();
 
         mainTitle.setText("Add new Quiz");
 
-        int textWidth = 450;
-        int textHeight = 50;
-        int textX = 450;
+        int textWidth = 300;
+        int textHeight = 60;
+        int textX = 250;
         int textY = 250;
 
-        int labelWidth = 450;
+        int labelWidth = 300;
         int labelHeight = 100;
-        int labelX = 450;
+        int labelX = 250;
         int labelY = 150;
 
         int buttonWidth = 100;
-        int buttonHeight = 50;
-        int xPosition = 625;
+        int buttonHeight = 60;
+        int xPosition = 350;
         int yPosition = 330;
 
         TextField textField = new TextField();
@@ -446,26 +446,26 @@ public class PlatformController {
 
     }
 
-
+    // changed
     public void removeQuiz(){
 
         mainPane.getChildren().clear();
 
         mainTitle.setText("Remove Quiz");
 
-        int textWidth = 450;
-        int textHeight = 50;
-        int textX = 450;
+        int textWidth = 300;
+        int textHeight = 60;
+        int textX = 250;
         int textY = 250;
 
-        int labelWidth = 450;
+        int labelWidth = 300;
         int labelHeight = 100;
-        int labelX = 450;
+        int labelX = 250;
         int labelY = 150;
 
         int buttonWidth = 250;
-        int buttonHeight = 50;
-        int xPosition = 550;
+        int buttonHeight = 60;
+        int xPosition = 275;
         int yPosition = 330;
 
         TextField textField = new TextField();
@@ -556,9 +556,7 @@ public class PlatformController {
 
     /**
      * button to clean up the scene
-     * @param event
      */
-
     public void mainMenu(ActionEvent event) {
         mainPane.getChildren().clear();
         mainTitle.setText("Gotta solve 'em all!");

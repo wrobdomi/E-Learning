@@ -4,6 +4,7 @@
 
 .buttons {
     -fx-background-color: black;
+    -fx-background-radius: 30px;
     -fx-border-radius: 30px;
     -fx-border-color: #0099CC;
 
@@ -25,4 +26,5 @@
 
 .boxes {
     -fx-background-color: #1d1d1d;
+
 }

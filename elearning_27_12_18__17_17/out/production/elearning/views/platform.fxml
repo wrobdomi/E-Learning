@@ -33,7 +33,6 @@
                </image>
             </ImageView>
                <Label fx:id="mainTitle" alignment="CENTER" contentDisplay="CENTER" prefWidth="650.0" styleClass="labels" stylesheets="@Platform.css" text="Welcome !" textAlignment="CENTER" BorderPane.alignment="CENTER" />
-
            </children>
          </HBox>
     </top>
