@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane fx:id="dialog" prefHeight="129.0" prefWidth="280.0" style="-fx-background-color: #1d1d1d;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="230.0" text="Quiz added successfully " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font></Label>
+   </content>
+   <effect>
+      <Glow level="0.83" />
+   </effect>
+
+</DialogPane>

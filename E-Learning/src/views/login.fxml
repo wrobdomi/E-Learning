@@ -11,47 +11,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1050.0" styleClass="loginBackground" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1050.0" styleClass="loginBackground" stylesheets="@../stylesheets/login.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
-      <HBox alignment="TOP_RIGHT" layoutX="408.0" layoutY="119.0" prefHeight="60.0" prefWidth="1050.0" styleClass="box" stylesheets="@Login.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#authenticateUser" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@Login.css" text="Sign in!" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin></Button>
-         </children>
-      </HBox>
-      <VBox alignment="CENTER" layoutX="390.0" layoutY="250.0" prefHeight="200.0" prefWidth="250.0" styleClass="box" stylesheets="@Login.css">
-         <children>
-            <TextField fx:id="username" alignment="CENTER" prefHeight="60.0" promptText="Username..." styleClass="fields" stylesheets="@Login.css">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextField>
-            <PasswordField fx:id="password" alignment="CENTER" prefHeight="60.0" promptText="Password..." styleClass="fields" stylesheets="@Login.css">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </PasswordField>
-         </children>
-      </VBox>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="22.0" prefHeight="60.0" prefWidth="250.0" styleClass="labels" stylesheets="@Login.css" text="E-Learning" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <HBox alignment="TOP_RIGHT" layoutX="542.0" layoutY="119.0" prefHeight="60.0" prefWidth="488.0" styleClass="box" stylesheets="@../stylesheets/login.css" AnchorPane.leftAnchor="542.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <VBox alignment="CENTER" layoutX="390.0" layoutY="250.0" prefHeight="200.0" prefWidth="250.0" styleClass="box" stylesheets="@../stylesheets/login.css" />
+      <Label alignment="CENTER" layoutX="611.0" layoutY="357.0" prefHeight="108.0" prefWidth="432.0" styleClass="labels" stylesheets="@../stylesheets/login.css" text="E-Learning">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <PasswordField fx:id="password" alignment="CENTER" layoutX="725.0" layoutY="560.0" prefHeight="60.0" promptText="Password..." styleClass="fields" stylesheets="@../stylesheets/login.css">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </PasswordField>
+      <TextField fx:id="username" alignment="CENTER" layoutX="724.0" layoutY="478.0" prefHeight="60.0" promptText="Username..." styleClass="fields" stylesheets="@../stylesheets/login.css">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <Button alignment="CENTER" layoutX="702.0" layoutY="656.0" mnemonicParsing="false" onAction="#authenticateUser" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@../stylesheets/login.css" text="Sign in!" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
    </children>
 
     <stylesheets>
-        <URL value="@Login.css" />
+        <URL value="@../stylesheets/login.css" />
     </stylesheets>
 </AnchorPane>

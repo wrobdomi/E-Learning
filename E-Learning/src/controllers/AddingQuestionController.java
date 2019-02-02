@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -112,6 +114,8 @@ public class AddingQuestionController {
         correctC.setSelected(false);
         correctD.setSelected(false);
 
+        this.showSuccessfullyAddedQuestion();
+
     }
 
     public void goBackToMyQuizzes(){
@@ -135,6 +139,25 @@ public class AddingQuestionController {
         }
 
     }
+
+
+
+    public void showSuccessfullyAddedQuestion(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainPlatform.getScene().getWindow());
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("../views/addedquestion.fxml"));
+            dialog.getDialogPane().setContent(root);
+        }catch(IOException e){
+            System.out.println("Cant load the dialog.");
+            e.printStackTrace();
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+
+        dialog.showAndWait();
+    }
+
 
 
 }

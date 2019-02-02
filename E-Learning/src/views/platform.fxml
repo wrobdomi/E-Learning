@@ -7,39 +7,31 @@
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainPlatform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1050.0" styleClass="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PlatformController">
+<BorderPane fx:id="mainPlatform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850" prefWidth="1500.0" styleClass="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PlatformController">
     <top>
-        <HBox alignment="CENTER_LEFT" styleClass="boxes" stylesheets="Platform.css">
+        <HBox alignment="CENTER_LEFT" styleClass="boxes" stylesheets="../stylesheets/platform.css">
            <children>
-               <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="250.0" styleClass="labels" stylesheets="@Platform.css" text="E-Learning" BorderPane.alignment="CENTER">
+               <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="250.0" styleClass="labels" stylesheets="@../stylesheets/platform.css" text="E-Learning" BorderPane.alignment="CENTER">
                </Label>
-            <ImageView fitHeight="117.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@back.jpg" />
-               </image>
-            </ImageView>
-               <Label fx:id="mainTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="570.0" styleClass="labels" stylesheets="@Platform.css" text="Welcome !" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+               <Label fx:id="mainTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="127.0" prefWidth="1252.0" style="-fx-background-color: gray;" styleClass="labels" stylesheets="@../stylesheets/platform.css" text="Welcome !" textAlignment="CENTER" BorderPane.alignment="CENTER" />
            </children>
          </HBox>
     </top>
     <left>
-        <VBox alignment="TOP_CENTER" spacing="1.0" styleClass="boxes" stylesheets="Platform.css" BorderPane.alignment="CENTER">
+        <VBox alignment="TOP_CENTER" spacing="1.0" style="-fx-border-style: solid; -fx-border-color: white;" styleClass="boxes" stylesheets="../stylesheets/platform.css" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="60.0" prefWidth="250.0" styleClass="labels" stylesheets="@Platform.css" text="Menu">
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="250.0" styleClass="labels" stylesheets="@../stylesheets/platform.css" text="Menu">
             </Label>
-            <Button mnemonicParsing="false" onAction="#mainMenu" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@Platform.css" text="Main Menu" />
-            <Button mnemonicParsing="false" onAction="#showUsersQuizzes" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@Platform.css" text="My Quizzes">
+            <Button mnemonicParsing="false" onAction="#showUsersQuizzes" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@../stylesheets/platform.css" text="My Quizzes">
             </Button>
-            <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#addNewQuiz" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@Platform.css" text="Add New Quiz">
+            <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#addNewQuiz" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@../stylesheets/platform.css" text="Add New Quiz">
             </Button>
-            <Button layoutX="10.0" layoutY="99.0" mnemonicParsing="false" onAction="#removeQuiz" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@Platform.css" text="Remove Quiz">
+            <Button layoutX="10.0" layoutY="99.0" mnemonicParsing="false" onAction="#removeQuiz" prefHeight="60.0" prefWidth="250.0" styleClass="buttons" stylesheets="@../stylesheets/platform.css" text="Remove Quiz">
             </Button>
          </children>
          <effect>
@@ -58,10 +50,10 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="mainPane" prefHeight="600.0" prefWidth="1233.0" BorderPane.alignment="CENTER" />
    </center>
 
     <stylesheets>
-        <URL value="@Platform.css" />
+        <URL value="@../stylesheets/platform.css" />
     </stylesheets>
 </BorderPane>

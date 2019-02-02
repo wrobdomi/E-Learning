@@ -20,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -50,13 +51,13 @@ public class PlatformController {
 
         mainTitle.setText("List off your quizzes");
 
-        int initialX = 20;
-        int xPosition = 20;
-        int xPositionChange = 130;
-        int yPosition = 20;
-        int yPositionChange = 130;
-        int buttonWidth = 110;
-        int buttonHeight = 110;
+        int initialX = 30;
+        int xPosition = 30;
+        int xPositionChange = 200;
+        int yPosition = 50;
+        int yPositionChange = 220;
+        int buttonWidth = 175;
+        int buttonHeight = 175;
 
         Stage primaryStage = (Stage) mainPlatform.getScene().getWindow();
         System.out.println("Title is " + primaryStage.getTitle());
@@ -139,11 +140,11 @@ public class PlatformController {
 
         mainTitle.setText("QUIZ: " + text);
 
-        int xPosition = 120;
-        int xPositionChange = 300;
-        int yPosition = 150;
-        int buttonWidth = 110;
-        int buttonHeight = 110;
+        int xPosition = 290;
+        int xPositionChange = 350;
+        int yPosition = 210;
+        int buttonWidth = 180;
+        int buttonHeight = 180;
 
         ArrayList<Button> buttons = new ArrayList<>();
 
@@ -222,22 +223,22 @@ public class PlatformController {
 
         actualQuestion = 0;
 
-        int questionWidth = 760;
+        int questionWidth = 900;
         int questionHeight = 100;
-        int questionX = 20;
-        int questionY = 20;
+        int questionX = 150;
+        int questionY = 40;
 
-        int answerWidth = 760;
+        int answerWidth = 900;
         int answerHeight = 50;
-        int answerX = 20;
-        int answerY = 140;
+        int answerX = 150;
+        int answerY = 170;
         int initialY = answerY;
         int answerChange = 70;
 
         int buttonWidth = 100;
         int buttonHeight = 60;
-        int xPosition = 350;
-        int yPosition = 420;
+        int xPosition = 565;
+        int yPosition = 450;
 
         mainTitle.setText("Now learning " + text);
 
@@ -380,18 +381,18 @@ public class PlatformController {
 
         int textWidth = 300;
         int textHeight = 40;
-        int textX = 220;
-        int textY = 220;
+        int textX = 460;
+        int textY = 320;
 
         int labelWidth = 200;
         int labelHeight = 75;
-        int labelX = 275;
-        int labelY = 150;
+        int labelX = 515;
+        int labelY = 250;
 
         int buttonWidth = 60;
         int buttonHeight = 40;
-        int xPosition = 340;
-        int yPosition = 280;
+        int xPosition = 580;
+        int yPosition = 385;
 
         TextField textField = new TextField();
         textField.setMinWidth(textWidth);
@@ -414,6 +415,7 @@ public class PlatformController {
         label.setAlignment(Pos.CENTER);
         label.setTranslateX(labelX);
         label.setTranslateY(labelY);
+        label.setFont(Font.font ("Kristen ITC"));
         mainPane.getChildren().add(label);
 
         Button button1 = new Button("Add");
@@ -444,6 +446,8 @@ public class PlatformController {
         DatabaseService databaseService = DatabaseService.getInstance();
         databaseService.addNewQuiz(quizName, primaryStage.getTitle());
 
+        this.showSuccessfullyAddedDialog();
+
     }
 
     // changed
@@ -455,18 +459,18 @@ public class PlatformController {
 
         int textWidth = 300;
         int textHeight = 40;
-        int textX = 220;
-        int textY = 220;
+        int textX = 460;
+        int textY = 320;
 
         int labelWidth = 200;
         int labelHeight = 75;
-        int labelX = 275;
-        int labelY = 150;
+        int labelX = 515;
+        int labelY = 250;
 
         int buttonWidth = 60;
         int buttonHeight = 40;
-        int xPosition = 320;
-        int yPosition = 280;
+        int xPosition = 560;
+        int yPosition = 385;
 
         TextField textField = new TextField();
         textField.setMinWidth(textWidth);
@@ -530,6 +534,7 @@ public class PlatformController {
         }
         if(remove){
             databaseService.removeQuiz(quizToRemove);
+            showRemovedQuizDialog();
         }
         else{
             this.showErrorRemovingQuizDialog();
@@ -548,10 +553,46 @@ public class PlatformController {
             e.printStackTrace();
         }
 
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
 
         dialog.showAndWait();
     }
+
+
+    public void showRemovedQuizDialog(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainPane.getScene().getWindow());
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("../views/removedquiz.fxml"));
+            dialog.getDialogPane().setContent(root);
+        }catch(IOException e){
+            System.out.println("Cant load the dialog.");
+            e.printStackTrace();
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+
+        dialog.showAndWait();
+    }
+
+
+    public void showSuccessfullyAddedDialog(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainPane.getScene().getWindow());
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("../views/addedquizdialog.fxml"));
+            dialog.getDialogPane().setContent(root);
+        }catch(IOException e){
+            System.out.println("Cant load the dialog.");
+            e.printStackTrace();
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+
+        dialog.showAndWait();
+    }
+
+
 
 
     /**

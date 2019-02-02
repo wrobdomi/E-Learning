@@ -4,11 +4,11 @@
 
 .buttons {
     -fx-background-color: black;
-    -fx-background-radius: 30px;
-    -fx-border-radius: 30px;
-    -fx-border-color: #0099CC;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: white;
 
-    -fx-text-fill: #0099CC;
+    -fx-text-fill: white;
     -fx-font-family: "Book Antiqua";
     -fx-font-weight: italic;
     -fx-font-size: 15px;
