@@ -40,15 +40,22 @@ knowledge.
 * E-Learning
   * src/main/java
     + controllers
-      * SpringBootWebApplication.java - main 
+      * AddingQuestionController
+      * LoginController
+      * PlatformController
     + database
-      * Controllers
+      * DatabaseService
     + entities
-      * Todo.java - Entity class for database 
+      * Answer
+      * Question
+      * Quizz
+      * User
     + enums
-      * Security Configuration
+      * QuizMenuEnum
+      * QuizMenuPicturesEnum
+      * QuizOptions
     + main
-      * Database repository and service
+      * Main
     + stylesheets
       * CSS files
     + views
